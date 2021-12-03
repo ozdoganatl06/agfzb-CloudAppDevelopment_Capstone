@@ -27,8 +27,8 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ["ozdogan.eu-gb.mybluemix.net"]
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ozdogan.eu-gb.mybluemix.net"]
 
 # Application definition
 
