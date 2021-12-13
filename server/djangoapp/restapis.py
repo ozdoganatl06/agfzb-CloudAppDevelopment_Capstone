@@ -136,7 +136,7 @@ def get_dealer_reviews_from_cf(url, dealerId):
         return results
 
 def analyze_review_sentiments(texttoanalyze):
-    print("geldi",texttoanalyze)
+    # print("geldi",texttoanalyze)
     api_key ="uj_r5rP5LeKqVQhtll2tzJOPFxSadY7ox9knj-Tf0e8j"
     url     ="https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/76036435-5a43-4136-91e2-6214909651b1"
     version = '2021-08-01'
