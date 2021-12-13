@@ -106,6 +106,12 @@
 .main.shifted > #nav-sidebar + .content {
     max-width: calc(100% - 299px);
 }
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: rgb(228, 99, 99);
+  }
 
 @media (max-width: 767px) {
     #nav-sidebar, #toggle-nav-sidebar {

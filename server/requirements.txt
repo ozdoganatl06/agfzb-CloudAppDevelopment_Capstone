@@ -1,4 +1,7 @@
 requests
 Django
 gunicorn==20.0.4
-Pillow==8.0.1
+Pillow==8.4.0
+ibm-watson==5.1.0
+ibmcloudant==0.0.39
+pyJWT==2.0.1

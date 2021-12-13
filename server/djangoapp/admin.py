@@ -8,7 +8,6 @@ from .models import CarMake, CarModel
 # CarModelInline class
 class CarModelInline(admin.StackedInline):
     model = CarModel
-
 # CarModelAdmin class
 class CarModelAdmin(admin.ModelAdmin):
     list_display = ['name']
@@ -18,14 +17,6 @@ class CarModelAdmin(admin.ModelAdmin):
 class CarMakeAdmin(admin.ModelAdmin):
     inlines = [CarModelInline]
     list_display = ['name']
-
-
-
-
-
-
-
-
 
 
 

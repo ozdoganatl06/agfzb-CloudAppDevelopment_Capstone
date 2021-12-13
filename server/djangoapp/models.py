@@ -20,7 +20,7 @@ import uuid
 # - __str__ method to print a car make object
 # Lesson model
 class CarMake(models.Model):
-    id = models.AutoField(primary_key=True)
+
     name = models.CharField(max_length=20, default="name")
     description =models.CharField(max_length=20, default="description")
 
@@ -30,11 +30,16 @@ class CarMake(models.Model):
                "Description: " + self.description
   
 class CarModel(models.Model):
-    modelle = models.CharField(max_length=200, default="modelle")
-    modelle = models.ManyToManyField(CarMake)
-    modelle = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+
+
+    
+    carmake = models.ForeignKey(CarMake, null= True, on_delete=models.CASCADE)
+    name = models.CharField(null= False, max_length=30, default='Audi X8')
+ 
+  
+    year = models.DateField(null= True)
     dealer_id= models.AutoField(primary_key=True)
-    name =models.CharField(max_length=20, default="name")
+  
  
     
     RED = 'Red'
@@ -50,7 +55,7 @@ class CarModel(models.Model):
         (BLACK,'Black')
         ]
     color = models.CharField(max_length=6, choices=COLOR_CHOICES, default=WHITE)
-    year =  models.DateField()
+ 
 
     SUV = 'Suv'
     SEDAN = 'Sedan'
@@ -76,6 +81,59 @@ class CarModel(models.Model):
 
 
 # <HINT> Create a plain Python class `CarDealer` to hold dealer data
+class CarDealer:
 
+    def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip,id_):
+        # Dealer address
+        self.address = address
+        # Dealer city
+        self.city = city
+        # Dealer Full Name
+        self.full_name = full_name
+        # Dealer id
+        self.id = id
+        # Location lat
+        self.lat = lat
+        # Location long
+        self.long = long
+        # Dealer short name
+        self.short_name = short_name
+        # Dealer state
+        self.st = st
+        
+        self.id_ = id_
+
+        # Dealer zip
+        self.zip = zip
+
+    def __str__(self):
+        return "Dealer name: " + self.full_name
 
 # <HINT> Create a plain Python class `DealerReview` to hold review data
+class DealerReview:
+    
+    def __init__(self,dealership,name,purchase,review,purchase_date,car_make,car_model,car_year,sentiment,id,id_):
+        # Dealer address
+        self.dealership = dealership
+        # Dealer city
+        self.purchase = purchase
+        # Dealer Full Name
+        self.review = review
+        # Dealer id
+        self.id = id
+        # Location lat
+        self.purchase_date = purchase_date
+        # Location long
+        self.name = name
+        # Dealer state
+        self.car_make = car_make
+        # Dealer zip
+        self.car_model = car_model
+        # Dealer state
+        self.car_year = car_year
+        # Dealer zip
+        self.sentiment = sentiment
+        self.id_ = id_
+
+    def __str__(self):
+        return "Dealer dealership: " + self.dealership
